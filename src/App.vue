@@ -39,8 +39,9 @@ export default {
   },
   methods: {
     getTime() {
+      let year = new Date().getFullYear()
       setInterval(() => {
-        let myBirthay = new Date('2022-03-30T00:00:00.000').getTime()
+        let myBirthay = new Date(`${year}-03-30T00:00:00.000`).getTime()
       
         let delta = Math.floor((myBirthay - new Date()) / 1000);
         let days = Math.floor(delta / 86400);
