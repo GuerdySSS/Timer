@@ -42,24 +42,25 @@ export default {
       let year = new Date().getFullYear()
       setInterval(() => {
         let myBirthay = new Date(`${year}-03-30T00:00:00.000`).getTime()
-      
-        let delta = Math.floor((myBirthay - new Date()) / 1000);
-        let days = Math.floor(delta / 86400);
-        delta -= days * 86400;
+        let delta = Math.floor((myBirthay - new Date()) / 1000)
+        let days = Math.floor(delta / 86400)
+        delta -= days * 86400
 
-        let hours = Math.floor(delta / 3600) % 24;
-        delta -= hours * 3600;
+        let hours = Math.floor(delta / 3600) % 24
+        delta -= hours * 3600
 
-        let minutes = Math.floor(delta / 60) % 60;
-        delta -= minutes * 60;
+        let minutes = Math.floor(delta / 60) % 60
+        delta -= minutes * 60
 
-        let seconds = delta % 60;
+        let seconds = delta % 60
 
         this.days = days
         this.hours = hours
         this.minutes = minutes
         this.seconds = seconds
-      }, 1000);
+
+        if (delta == 0) ++year
+      }, 1000)
     }
   }
 }
